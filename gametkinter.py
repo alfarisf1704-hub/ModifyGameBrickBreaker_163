@@ -180,12 +180,12 @@ class Game(tk.Frame):
         
         if num_bricks == 0:
             self.ball.speed = 0
-            self.draw_text(self.width / 2, 200, 'Kamu Menang!')
+            self.draw_text(self.width / 2, 200, 'You WIN!!!')
         elif self.ball.get_position()[3] >= self.height: # Cek jika bola jatuh melewati batas bawah layar
             self.ball.speed = 0
             self.lives -= 1
             if self.lives < 0:
-                self.draw_text(self.width / 2, 200, 'Game Over')
+                self.draw_text(self.width / 2, 200, 'Game Over\nDont Give UP')
             else:
                 self.after(1000, self.setup_game)
         else:
