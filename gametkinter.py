@@ -88,7 +88,7 @@ class Paddle(GameObject):
 
 
 class Brick(GameObject):
-    COLORS = {1: '#999999', 2: '#555555', 3: '#222222'}
+    COLORS = {1: "#0DF02F", 2: "#E8F006", 3: "#F40707"}
 
     def __init__(self, canvas, x, y, hits):
         self.width = 75
@@ -142,7 +142,7 @@ class Game(tk.Frame):
     def setup_game(self):
         self.add_ball()
         self.update_lives_text()
-        self.text = self.draw_text(self.width / 2, 200, 'PRESS SPACE TO START',font='Times New Roman')
+        self.text = self.draw_text(self.width / 2, 200, 'PRESS SPACE TO START')
         self.canvas.bind('<space>', lambda _: self.start_game())
 
     def add_ball(self):
