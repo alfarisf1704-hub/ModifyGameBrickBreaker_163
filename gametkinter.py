@@ -63,7 +63,7 @@ class Ball(GameObject):
 
 class Paddle(GameObject):
     def __init__(self, canvas, x, y):
-        self.width = 80
+        self.width = 150
         self.height = 10
         self.ball = None
         # Melanjutkan potongan kode yang terputus
@@ -71,7 +71,7 @@ class Paddle(GameObject):
                                        y - self.height / 2,
                                        x + self.width / 2,
                                        y + self.height / 2,
-                                       fill='blue')
+                                       fill='black')
         super(Paddle, self).__init__(canvas, item)
 
     def set_ball(self, ball):
@@ -113,10 +113,10 @@ class Brick(GameObject):
 class Game(tk.Frame):
     def __init__(self, master):
         super(Game, self).__init__(master)
-        self.lives = 3
+        self.lives = 100
         self.width = 610
         self.height = 400
-        self.canvas = tk.Canvas(self, bg='#aaaaff',
+        self.canvas = tk.Canvas(self, bg="#20b3e9",
                                 width=self.width,
                                 height=self.height)
         self.canvas.pack()
@@ -158,7 +158,7 @@ class Game(tk.Frame):
         self.items[brick.item] = brick
 
     def draw_text(self, x, y, text, size='20'):
-        font = ('Helvetica', size)
+        font = ('Times New Roman', size)
         return self.canvas.create_text(x, y, text=text, font=font)
 
     def update_lives_text(self):
@@ -185,7 +185,7 @@ class Game(tk.Frame):
             self.ball.speed = 0
             self.lives -= 1
             if self.lives < 0:
-                self.draw_text(self.width / 2, 200, ' Game Over\nDont Give UP')
+                self.draw_text(self.width / 2, 200, '           Game Over\nyou can try again, dont give UP!')
             else:
                 self.after(1000, self.setup_game)
         else:
