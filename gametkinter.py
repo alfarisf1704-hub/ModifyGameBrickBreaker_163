@@ -185,7 +185,7 @@ class Game(tk.Frame):
             self.ball.speed = 0
             self.lives -= 1
             if self.lives < 0:
-                self.draw_text(self.width / 2, 200, 'Game Over\nDont Give UP')
+                self.draw_text(self.width / 2, 200, ' Game Over\nDont Give UP')
             else:
                 self.after(1000, self.setup_game)
         else:
