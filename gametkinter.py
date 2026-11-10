@@ -142,7 +142,7 @@ class Game(tk.Frame):
     def setup_game(self):
         self.add_ball()
         self.update_lives_text()
-        self.text = self.draw_text(self.width / 2, 200, 'Tekan Spasi untuk Mulai')
+        self.text = self.draw_text(self.width / 2, 200, 'PRESS SPACE TO START','Times New Roman')
         self.canvas.bind('<space>', lambda _: self.start_game())
 
     def add_ball(self):
